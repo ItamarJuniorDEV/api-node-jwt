@@ -1,0 +1,90 @@
+Não, dessa forma a formatação ficou quebrada. Para criar o README.md, você precisa colar exatamente assim:
+
+```markdown
+# API Node.js com JWT Authentication
+
+Uma API REST construída com Node.js, Express e Prisma, implementando autenticação JWT.
+
+## Funcionalidades
+
+- Cadastro de usuários
+- Autenticação via JWT
+- Rotas protegidas
+- Criptografia de senha com bcrypt
+- Persistência em MySQL
+
+## Pré-requisitos
+
+- Node.js
+- MySQL
+- npm ou yarn
+
+## Instalação
+
+1. Clone o repositório:
+```bash
+git clone https://github.com/ItamarJuniorDEV/api-node-jwt.git
+cd api-node-jwt
+```
+
+2. Instale as dependências:
+```bash
+npm install
+```
+
+3. Configure o arquivo `.env`:
+```
+DATABASE_URL="mysql://user:password@localhost:3306/api-node-jwt"
+JWT_SECRET="sua_chave_secreta_aqui"
+```
+
+4. Execute as migrations do Prisma:
+```bash
+npx prisma migrate dev
+```
+
+5. Inicie o servidor:
+```bash
+npm run dev
+```
+
+## Rotas
+
+### Públicas
+
+POST /cadastro
+```json
+{
+  "name": "Teste",
+  "email": "teste@teste.com",
+  "password": "123456"
+}
+```
+
+POST /login
+```json
+{
+  "email": "teste@teste.com",
+  "password": "123456"
+}
+```
+
+### Protegidas
+
+GET /listar-usuarios
+- Requer header: `Authorization: Bearer seu_token_aqui`
+
+## Tecnologias
+
+- Node.js
+- Express
+- Prisma
+- JWT
+- bcrypt
+- MySQL
+
+## Autor
+
+[Itamar Junior](https://github.com/ItamarJuniorDEV)
+```
+
